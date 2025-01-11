@@ -7,7 +7,7 @@ import deflist from 'markdown-it-deflist'
 import abbreviation from 'markdown-it-abbr'
 import insert from 'markdown-it-ins'
 import mark from 'markdown-it-mark'
-import toc from 'markdown-it-toc-and-anchor'
+import toc from 'markdown-it-toc-and-anchor-purify'
 import katex from 'markdown-it-katex'
 import tasklists from 'markdown-it-task-lists'
 
@@ -211,10 +211,10 @@ export default {
     this.$emit('rendered', outHtml)
     return createElement(
       'div', {
-        domProps: {
-          innerHTML: outHtml,
-        },
+      domProps: {
+        innerHTML: outHtml,
       },
+    },
     )
   },
 
