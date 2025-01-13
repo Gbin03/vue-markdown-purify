@@ -1,19 +1,19 @@
 /**
- * vue-markdown v2.2.4-rc.1
+ * vue-markdown v2.2.4-rc.2
  * https://github.com/miaolz123/vue-markdown
  * MIT License
  */
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor-purify"), require("markdown-it-katex"), require("markdown-it-task-lists"));
+		module.exports = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor-purify"), require("katex"), require("markdown-it-task-lists"));
 	else if(typeof define === 'function' && define.amd)
-		define(["babel-runtime/core-js/get-iterator", "babel-runtime/core-js/object/keys", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor-purify", "markdown-it-katex", "markdown-it-task-lists"], factory);
+		define(["babel-runtime/core-js/get-iterator", "babel-runtime/core-js/object/keys", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor-purify", "katex", "markdown-it-task-lists"], factory);
 	else if(typeof exports === 'object')
-		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor-purify"), require("markdown-it-katex"), require("markdown-it-task-lists"));
+		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor-purify"), require("katex"), require("markdown-it-task-lists"));
 	else
-		root["VueMarkdown"] = factory(root["babel-runtime/core-js/get-iterator"], root["babel-runtime/core-js/object/keys"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor-purify"], root["markdown-it-katex"], root["markdown-it-task-lists"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_14__) {
+		root["VueMarkdown"] = factory(root["babel-runtime/core-js/get-iterator"], root["babel-runtime/core-js/object/keys"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor-purify"], root["katex"], root["markdown-it-task-lists"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -114,16 +114,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _markdownItTocAndAnchorPurify2 = _interopRequireDefault(_markdownItTocAndAnchorPurify);
 
-	var _markdownItKatex = __webpack_require__(13);
+	var _mdKatex = __webpack_require__(13);
 
-	var _markdownItKatex2 = _interopRequireDefault(_markdownItKatex);
+	var _mdKatex2 = _interopRequireDefault(_mdKatex);
 
-	var _markdownItTaskLists = __webpack_require__(14);
+	var _markdownItTaskLists = __webpack_require__(15);
 
 	var _markdownItTaskLists2 = _interopRequireDefault(_markdownItTaskLists);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import katex from 'markdown-it-katex'
 	exports.default = {
 	  md: new _markdownIt2.default(),
 
@@ -262,7 +263,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  render: function render(createElement) {
 	    var _this = this;
 
-	    this.md = new _markdownIt2.default().use(_markdownItSub2.default).use(_markdownItSup2.default).use(_markdownItFootnote2.default).use(_markdownItDeflist2.default).use(_markdownItAbbr2.default).use(_markdownItIns2.default).use(_markdownItMark2.default).use(_markdownItKatex2.default, { "throwOnError": false, "errorColor": " #cc0000" }).use(_markdownItTaskLists2.default, { enabled: this.taskLists });
+	    this.md = new _markdownIt2.default().use(_markdownItSub2.default).use(_markdownItSup2.default).use(_markdownItFootnote2.default).use(_markdownItDeflist2.default).use(_markdownItAbbr2.default).use(_markdownItIns2.default).use(_markdownItMark2.default).use(_mdKatex2.default, { "throwOnError": false, "errorColor": " #cc0000" }).use(_markdownItTaskLists2.default, { enabled: this.taskLists });
 
 	    if (this.emoji) {
 	      this.md.use(_markdownItEmoji2.default);
@@ -446,15 +447,233 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_13__;
+	'use strict';
+
+	var katex = __webpack_require__(14);
+
+	// Test if potential opening or closing delimieter
+	// Assumes that there is a "$" at state.src[pos]
+	function isValidDelim(state, pos) {
+	    var prevChar,
+	        nextChar,
+	        max = state.posMax,
+	        can_open = true,
+	        can_close = true;
+
+	    prevChar = pos > 0 ? state.src.charCodeAt(pos - 1) : -1;
+	    nextChar = pos + 1 <= max ? state.src.charCodeAt(pos + 1) : -1;
+
+	    // Check non-whitespace conditions for opening and closing, and
+	    // check that closing delimeter isn't followed by a number
+	    if (prevChar === 0x20 /* " " */ || prevChar === 0x09 /* \t */ || nextChar >= 0x30 /* "0" */ && nextChar <= 0x39 /* "9" */) {
+	        can_close = false;
+	    }
+	    if (nextChar === 0x20 /* " " */ || nextChar === 0x09 /* \t */) {
+	            can_open = false;
+	        }
+
+	    return {
+	        can_open: can_open,
+	        can_close: can_close
+	    };
+	}
+
+	function math_inline(state, silent) {
+	    var start, match, token, res, pos, esc_count;
+
+	    if (state.src[state.pos] !== "$") {
+	        return false;
+	    }
+
+	    res = isValidDelim(state, state.pos);
+	    if (!res.can_open) {
+	        if (!silent) {
+	            state.pending += "$";
+	        }
+	        state.pos += 1;
+	        return true;
+	    }
+
+	    // First check for and bypass all properly escaped delimieters
+	    // This loop will assume that the first leading backtick can not
+	    // be the first character in state.src, which is known since
+	    // we have found an opening delimieter already.
+	    start = state.pos + 1;
+	    match = start;
+	    while ((match = state.src.indexOf("$", match)) !== -1) {
+	        // Found potential $, look for escapes, pos will point to
+	        // first non escape when complete
+	        pos = match - 1;
+	        while (state.src[pos] === "\\") {
+	            pos -= 1;
+	        }
+
+	        // Even number of escapes, potential closing delimiter found
+	        if ((match - pos) % 2 == 1) {
+	            break;
+	        }
+	        match += 1;
+	    }
+
+	    // No closing delimter found.  Consume $ and continue.
+	    if (match === -1) {
+	        if (!silent) {
+	            state.pending += "$";
+	        }
+	        state.pos = start;
+	        return true;
+	    }
+
+	    // Check if we have empty content, ie: $$.  Do not parse.
+	    if (match - start === 0) {
+	        if (!silent) {
+	            state.pending += "$$";
+	        }
+	        state.pos = start + 1;
+	        return true;
+	    }
+
+	    // Check for valid closing delimiter
+	    res = isValidDelim(state, match);
+	    if (!res.can_close) {
+	        if (!silent) {
+	            state.pending += "$";
+	        }
+	        state.pos = start;
+	        return true;
+	    }
+
+	    if (!silent) {
+	        token = state.push('math_inline', 'math', 0);
+	        token.markup = "$";
+	        token.content = state.src.slice(start, match);
+	    }
+
+	    state.pos = match + 1;
+	    return true;
+	}
+
+	function math_block(state, start, end, silent) {
+	    var firstLine,
+	        lastLine,
+	        next,
+	        lastPos,
+	        found = false,
+	        token,
+	        pos = state.bMarks[start] + state.tShift[start],
+	        max = state.eMarks[start];
+
+	    if (pos + 2 > max) {
+	        return false;
+	    }
+	    if (state.src.slice(pos, pos + 2) !== '$$') {
+	        return false;
+	    }
+
+	    pos += 2;
+	    firstLine = state.src.slice(pos, max);
+
+	    if (silent) {
+	        return true;
+	    }
+	    if (firstLine.trim().slice(-2) === '$$') {
+	        // Single line expression
+	        firstLine = firstLine.trim().slice(0, -2);
+	        found = true;
+	    }
+
+	    for (next = start; !found;) {
+
+	        next++;
+
+	        if (next >= end) {
+	            break;
+	        }
+
+	        pos = state.bMarks[next] + state.tShift[next];
+	        max = state.eMarks[next];
+
+	        if (pos < max && state.tShift[next] < state.blkIndent) {
+	            // non-empty line with negative indent should stop the list:
+	            break;
+	        }
+
+	        if (state.src.slice(pos, max).trim().slice(-2) === '$$') {
+	            lastPos = state.src.slice(0, max).lastIndexOf('$$');
+	            lastLine = state.src.slice(pos, lastPos);
+	            found = true;
+	        }
+	    }
+
+	    state.line = next + 1;
+
+	    token = state.push('math_block', 'math', 0);
+	    token.block = true;
+	    token.content = (firstLine && firstLine.trim() ? firstLine + '\n' : '') + state.getLines(start + 1, next, state.tShift[start], true) + (lastLine && lastLine.trim() ? lastLine : '');
+	    token.map = [start, state.line];
+	    token.markup = '$$';
+	    return true;
+	}
+
+	module.exports = function math_plugin(md, options) {
+	    // Default options
+
+	    options = options || {};
+
+	    // set KaTeX as the renderer for markdown-it-simplemath
+	    var katexInline = function katexInline(latex) {
+	        options.displayMode = false;
+	        try {
+	            return katex.renderToString(latex, options);
+	        } catch (error) {
+	            if (options.throwOnError) {
+	                console.log(error);
+	            }
+	            return latex;
+	        }
+	    };
+
+	    var inlineRenderer = function inlineRenderer(tokens, idx) {
+	        return katexInline(tokens[idx].content);
+	    };
+
+	    var katexBlock = function katexBlock(latex) {
+	        options.displayMode = true;
+	        try {
+	            return "<p>" + katex.renderToString(latex, options) + "</p>";
+	        } catch (error) {
+	            if (options.throwOnError) {
+	                console.log(error);
+	            }
+	            return latex;
+	        }
+	    };
+
+	    var blockRenderer = function blockRenderer(tokens, idx) {
+	        return katexBlock(tokens[idx].content) + '\n';
+	    };
+
+	    md.inline.ruler.after('escape', 'math_inline', math_inline);
+	    md.block.ruler.after('blockquote', 'math_block', math_block, {
+	        alt: ['paragraph', 'reference', 'blockquote', 'list']
+	    });
+	    md.renderer.rules.math_inline = inlineRenderer;
+	    md.renderer.rules.math_block = blockRenderer;
+	};
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_14__;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_15__;
 
 /***/ })
 /******/ ])

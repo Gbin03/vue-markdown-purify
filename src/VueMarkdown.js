@@ -8,7 +8,8 @@ import abbreviation from 'markdown-it-abbr'
 import insert from 'markdown-it-ins'
 import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor-purify'
-import katex from 'markdown-it-katex'
+// import katex from 'markdown-it-katex'
+import katex from './md-katex'
 import tasklists from 'markdown-it-task-lists'
 
 export default {

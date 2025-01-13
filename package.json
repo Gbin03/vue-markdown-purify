@@ -1,6 +1,6 @@
 {
   "name": "vue-markdown-purify",
-  "version": "2.2.4-rc.1",
+  "version": "2.2.4-rc.2",
   "description": "A Powerful and Highspeed Markdown Parser for Vue",
   "main": "dist/vue-markdown.common.js",
   "files": [
@@ -48,7 +48,7 @@
     "markdown-it-emoji": "^1.1.1",
     "markdown-it-footnote": "^2.0.0",
     "markdown-it-ins": "^2.0.0",
-    "markdown-it-katex": "^2.0.3",
+    "katex": "^0.6.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
