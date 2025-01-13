@@ -1,6 +1,6 @@
 {
   "name": "vue-markdown-purify",
-  "version": "2.2.4",
+  "version": "2.2.4-rc.1",
   "description": "A Powerful and Highspeed Markdown Parser for Vue",
   "main": "dist/vue-markdown.common.js",
   "files": [
